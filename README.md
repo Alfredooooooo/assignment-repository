@@ -1,3 +1,12 @@
+## Link menuju heroku
+[Heroku App Link](https://pbpassignment.herokuapp.com/katalog/)
+## Bagan Request Client ke Django
+![Blank diagram](https://user-images.githubusercontent.com/88032017/190161598-f774cea5-38a6-4fe5-9af2-195784caabbd.png)
+1. Permintaan dari Client Browser dengan bantuan Web Server (seperti: Apache Web Server), akan diarahkan ke dalam server Django (WSGI) dimana aplikasi Django berjalan disana. 
+2. Setelah itu, permintaan tersebut akan diproses ke urls.py sehingga kita tahu views mana yang akan digunakan (dalam hal ini katalog). 
+3. Namun, apabila terdapat keperluan untuk mengakses Database (contoh: menyimpan informasi user setelah mereka mengisi form, mencari sesuatu yang ada di Database, dan sebagainya), maka views akan memanggil query ke models yang mempunyai hubungan design, update, delete dari views dan model akan memproses query tersebut ke database dan mengembalikan hasil query yang diinginkan kembali ke views
+4. Views didefinisikan oleh developer sebagai request handler sehingga views akan mengakses template dalam bentuk HTML sebagai respons yang akan diberikan ke user.  
+
 ## Mengapa kita menggunakan Virtual Environment? 
 Virtual Environment memberikan kita pilihan untuk mempunyai development environment yang berbeda dengan global development environment. Sejatinya, jika kita menjalankan semuanya dengan Python yang ada pada sistem komputer kita beserta dengan library-nya, maka project yang akan kita buat akan terbatas hanya pada Python versi tersebut. Ditambah lagi, mencoba untuk menjalankan segala aplikasi Python akan membuat hal tersebut rentan terhadap version conflict. Maka dari itu fungsi Virtual Environment cukup penting dalam hal ini yaitu:
 <br>
@@ -14,8 +23,8 @@ Tentu saja jika project Django kita tidak "package dependent" (tidak memerlukan 
    python -m venv env
    ```
 Hal ini akan melakukan install package-package yang dibutuhkan project kita secara global walaupun pada kasus normalnya, kita tidak perlu untuk melakukan instalasi secara global karena bisa saja terjadi version conflict pada package-package tersebut.
-
-
+<br>
+<br>
 TL;DR: Kita bisa membuat aplikasi web berbasis Django tanpa virtual environment walaupun tidak "practical"
 ## Cara membuat aplikasi Django dan menjalankannya
 
