@@ -14,7 +14,8 @@ Tentu saja jika project Django kita tidak "package dependent" (tidak memerlukan 
    python -m venv env
    ```
 Hal ini akan melakukan install package-package yang dibutuhkan project kita secara global walaupun pada kasus normalnya, kita tidak perlu untuk melakukan instalasi secara global karena bisa saja terjadi version conflict pada package-package tersebut.
-<br>
+
+
 TL;DR: Kita bisa membuat aplikasi web berbasis Django tanpa virtual environment walaupun tidak "practical"
 ## Cara membuat aplikasi Django dan menjalankannya
 
