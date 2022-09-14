@@ -1,8 +1,26 @@
-# Cara membuat aplikasi Django dan menjalankannya
+## Mengapa kita menggunakan Virtual Environment? 
+Virtual Environment memberikan kita pilihan untuk mempunyai development environment yang berbeda dengan global development environment. Sejatinya, jika kita menjalankan semuanya dengan Python yang ada pada sistem komputer kita beserta dengan library-nya, maka project yang akan kita buat akan terbatas hanya pada Python versi tersebut. Ditambah lagi, mencoba untuk menjalankan segala aplikasi Python akan membuat hal tersebut rentan terhadap version conflict. Maka dari itu fungsi Virtual Environment cukup penting dalam hal ini yaitu:
+<br>
+- Kita dapat menggunakan segala versi Python yang kita mau untuk development environment yang spesifik tanpa harus mempedulikan konflik-konflik yang mungkin akan terjadi
+- Main Python Package sistem tidak akan tertumpuk dengan package-package yang kurang relevan (Package yang hanya relevan terhadap satu project)
+- Kita dapat mengatur pacakage kita dengan lebih mudah dan orang lain yang bekerja dengan kita juga tahu package-package yang kita gunakan dan mereka dapat menggunakan package tersebut tanpa harus men-download/men-overwrite package-package tersebut kedalam kemputer orang tersebut
+<br>
+TL;DR: Virtual Environment dibutuhkan agar kita dapat membuat project dengan development environment sendiri beserta package-package yang dibutuhkan pada project tersebut tanpa berhubungan dengan project-project lainnya
+
+### Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+Tentu saja jika project Django kita tidak "package dependent" (tidak memerlukan package), kita tidak perlu repot-repot untuk menyalakan virtual environment. Tetapi seperti yang kita tahu, Django merupakan package sehingga disarankan untuk membuat Virtual Environment agar kita atau rekan kerja kita tidak akan kerepotan dengan konflik konflik yang akan terjadi. Kembali ke pertanyaan, jawabannya adalah ya, kita masih bisa membuat dan membuka aplikasi web berbasis Django tanpa virtual environment. Namun, jika kita melakukan command:
+
+   ```shell
+   python -m venv env
+   ```
+Hal ini akan melakukan install package-package yang dibutuhkan project kita secara global walaupun pada kasus normalnya, kita tidak perlu untuk melakukan instalasi secara global karena bisa saja terjadi version conflict pada package-package tersebut.
+<br>
+TL;DR: Kita bisa membuat aplikasi web berbasis Django tanpa virtual environment walaupun tidak "practical"
+## Cara membuat aplikasi Django dan menjalankannya
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
 
-# Sebelum implementasi:
+## Sebelum implementasi:
 
 1. Menjalankan perintah berikut untuk menyalakan _virtual environment_:
 
@@ -25,7 +43,7 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
    pip install -r requirements.txt
    ```
 
-## Cara mengimpementasi
+## Cara mengimpementasi:
 
 1. Membuka file views.py yang ada pada direktori katalog dan menambahkan sebuah function yaitu render_view:
 
@@ -117,6 +135,14 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
    git push origin main
    ```
 
+10. Masuk ke heroku.com dan buat aplikasi bernama pbpassignment dan melakukan copy API Key pada Account settings
+
+11. Membuka repository pada GitHub dan mengisi secret key pada Settings -> Secrets -> Actions bar
+
+   ```shell
+   HEROKU_APP_NAME: pbpassignment
+   HEROKU_API_KEY: (my_secret_API_key)
+   ```
 ## Credits
 
 Project ini dibuat berdasarkan [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage).
