@@ -1,8 +1,11 @@
 ## Heroku Current Assignment Link
 
 [Heroku MyWatchList HTML](https://pbpassignment.herokuapp.com/mywatchlist/html/)
+<br>
 [Heroku MyWatchList JSON](https://pbpassignment.herokuapp.com/mywatchlist/json/)
+<br>
 [Heroku MyWatchList XML](https://pbpassignment.herokuapp.com/mywatchlist/xml/)
+<br>
 
 ## Perbedaan antara JSON, XML, dan HTML
 
@@ -32,10 +35,15 @@ Maka dari itu, jika kita berbicara tentang data, istilah XML dan JSON tidak dapa
 - JSON biasa digunakan untuk merepresentasikan objek, sedangkan XML digunakan untuk merepresentasikan data-data didalamnya (dengan menggunakan struktur "tag")
 
 Referensi:
+<br>
 [Data Delivery](https://scele.cs.ui.ac.id/pluginfile.php/161284/mod_resource/content/1/04%20-%20Data%20Delivery.pdf)
+<br>
 [HTML vs JSON vs XML](https://medium.com/@oazzat19/what-is-the-difference-between-html-vs-xml-vs-json-254864972bbb)
+<br>
 [XML vs JSON W3S](https://www.w3schools.com/js/js_json_xml.asp)
+<br>
 [XML vs JSON GFG](https://www.geeksforgeeks.org/difference-between-json-and-xml/)
+<br>
 
 ## Mengapa kita membutuhkan data delivery dalam pengimplementasian sebuah platform
 
@@ -116,10 +124,10 @@ class MyWatchList(models.Model):
    python manage.py migrate
    ```
 
-6. Jalankan perintah berikut untuk memasukkan data pada initial_catalog_data.json pada database Django lokal:
+6. Jalankan perintah berikut untuk memasukkan data pada initial_mywatchlist_data.json pada database Django lokal:
 
    ```shell
-   python manage.py loaddata initial_catalog_data.json
+   python manage.py loaddata initial_mywatchlist_data.json
    ```
 
 7. Membuka file views.py yang ada pada direktori mywatchlist dan menambahkan function-function berikut:
@@ -224,45 +232,45 @@ class MyWatchList(models.Model):
                         {% if true_number >= 5 %}
                         <p class="card-text">Selamat, kamu sudah banyak menonton!</p>
                         {% else %}
-                        <p class="card-text">Wah, kamu masih sedikit menonton!</p>
-                        {% endif %}
-                        <a href="https://www.imdb.com/" target="_blank" class="btn btn-primary btn-sm">Taken From</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                      <p class="card-text">Wah, kamu masih sedikit menonton!</p>
+                      {% endif %}
+                      <a href="https://www.imdb.com/" target="_blank" class="btn btn-primary btn-sm">Taken From</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-            <table class="table table-success table-striped table-hover table-active table-bordered border-light mt-4">
-                <thead>
-                    <tr>
-                        <th class="text-center" colspan="6">My Watch List</th></tr>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Release Date</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Watched</th>
-                    <th class="text-center" scope="col">Review</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for watchlist in list_watch_list %}
-                    <tr>
-                    <th scope="row">{{watchlist.pk}}</th>
-                    <td>{{watchlist.title}}</td>
-                    <td>{{watchlist.release_date}}</td>
-                    <td>{{watchlist.rating}}</td>
-                    {% if watchlist.watched == True %}
-                        <td>Watched Already</td>
-                    {% else %}
-                        <td>On My Watch Queue</td>
-                    {% endif %}
-                    <td>{{watchlist.review}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+          <table class="table table-success table-striped table-hover table-active table-bordered border-light mt-4">
+              <thead>
+                  <tr>
+                      <th class="text-center" colspan="6">My Watch List</th></tr>
+                  <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Release Date</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Watched</th>
+                  <th class="text-center" scope="col">Review</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for watchlist in list_watch_list %}
+                  <tr>
+                  <th scope="row">{{watchlist.pk}}</th>
+                  <td>{{watchlist.title}}</td>
+                  <td>{{watchlist.release_date}}</td>
+                  <td>{{watchlist.rating}}</td>
+                  {% if watchlist.watched == True %}
+                      <td>Watched Already</td>
+                  {% else %}
+                      <td>On My Watch Queue</td>
+                  {% endif %}
+                  <td>{{watchlist.review}}</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
     {% endblock content %}
     ```
 
