@@ -3,7 +3,7 @@
     "model": "mywatchlist.mywatchlist",
     "pk": 1,
     "fields": {
-      "watched": false,
+      "watched": true,
       "title": "Harry Potter and the Sorcerer's Stone",
       "rating": 7.6,
       "release_date": "16 November 2001",
