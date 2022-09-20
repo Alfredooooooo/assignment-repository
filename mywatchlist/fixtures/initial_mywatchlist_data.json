@@ -1,0 +1,112 @@
+[
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 1,
+    "fields": {
+      "watched": true,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "rating": 7.6,
+      "release_date": "16 November 2001",
+      "review": "Having read the first few Harry Potter books before 2001 and hearing about the hype for the first movie, I was excited. I heard there was going to be an all-British cast (which makes sense, right?) and we'd get to see a live version of one of the defining novels of our generation. From what I remember I went with my family and a family friend to see the movie the day after Christmas and was pleasantly amazed. After the movie was over, I watched the credits and discovered some familiar names (the late Alan Rickman, Sister Act's Maggie Smith, James Bond 007's Robbie Coltrane, and Star Wars' Warwick Davis); others not so familiar (the kids, some of whom had their debut). But it was a good movie and was a party of colors and sights for all to see. This is easily my favorite of all the Harry Potter films. The catalyst of the movie series!"
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 2,
+    "fields": {
+      "watched": false,
+      "title": "The Shawshank Redemption",
+      "rating": 9.2,
+      "release_date": "14 October 1994",
+      "review": "It is no wonder that the film has such a high rating, it is quite literally breathtaking. What can I say that hasn't said before? Not much, it's the story, the acting, the premise, but most of all, this movie is about how it makes you feel. Sometimes you watch a film, and can't remember it days later, this film loves with you, once you've seen it, you don't forget. The ultimate story of friendship, of hope, and of life, and overcoming adversity. I understand why so many class this as the best film of all time, it isn't mine, but I get it. If you haven't seen it, or haven't seen it for some time, you need to watch it, it's amazing. 10/10."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 3,
+    "fields": {
+      "watched": true,
+      "title": "Inception",
+      "rating": 8.8,
+      "release_date": "16 July 2010",
+      "review": "You only get to watch this for the first time once, so choose your state of mind carefully. It is a film about movies and dreams and reality, and what sort of life it is best to find when you leave the cinema and return to whatever you left to enter. It is spectacular, and brutal, and enigmatic and disturbing. It is beautiful and absorbing. It is about one of my favourite characters ever to grace the screen. I don't see it often, in case it's not as good as I like to remember it. That is my secret, that I lock away in my safe in the basement. That somewhere there is a perfect world for us all. For some, perhaps it is in the cinema watching this."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 4,
+    "fields": {
+      "watched": false,
+      "title": "The Lord of the Rings: The Two Towers",
+      "rating": 8.8,
+      "release_date": "18 December 2002",
+      "review": "The Two Towers is worth watching just to see the Battle of Helm's Deep. It is one of the most impressive battle sequences to hit the big screen. But then there's so much more than that-this movie also features amazing special effects with Gollum, dramatic political tension in Rohan, and fantastic moments with the Ents. This is probably my favorite chapter of the Lord of the Rings film trilogy."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 5,
+    "fields": {
+      "watched": false,
+      "title": "Sunset Blvd.",
+      "rating": 8.4,
+      "release_date": "4 August 1950",
+      "review": "'Sunset Blvd.' is the funniest movie ever made about the saddest of human conditions, loneliness."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 6,
+    "fields": {
+      "watched": true,
+      "title": "Spider-Man: No Way Home",
+      "rating": 8.3,
+      "release_date": "17 December 2021",
+      "review": "Superhero extravaganza! Spider-Man NWH didn't meet my expectations, it exceeded them. The most emotionally resonant MCU film so far. This movie is worth every excruciating moment we had to wait. The visuals, the score, the emotions, the story, and ofc the fan-service. This film understands spider-man fans like no other spider-man film before it. Truly a celebration of the most beloved character in the best way possible!"
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 7,
+    "fields": {
+      "watched": false,
+      "title": "Se7en",
+      "rating": 8.6,
+      "release_date": "22 September 1995",
+      "review": "Despite clichés, and a very depressing finale, this is one of the best-made films of its era and genre."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 8,
+    "fields": {
+      "watched": true,
+      "title": "Interstellar",
+      "rating": 8.7,
+      "release_date": "7 November 2014",
+      "review": "After watching this insane movie in the theatres back in 2014 I swore to god I will wait 5 years to watch it again so I get to forget it and experince the insanity it has again This without doubt is THE BEST MOVIE EVER MADE"
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 9,
+    "fields": {
+      "watched": false,
+      "title": "Life Is Beautiful",
+      "rating": 8.6,
+      "release_date": "20 December 1997",
+      "review": "Emotional extremes abound, this story takes you round and around, elevating high, then smashing you down, your guiding light, an endearing clown. The essence of all that's right, that's wrong, a fathers love for his wife and son, to the thieves of liberty with power - and a gun; the worst of man, the world undone."
+    }
+  },
+  {
+    "model": "mywatchlist.mywatchlist",
+    "pk": 10,
+    "fields": {
+      "watched": true,
+      "title": "Aladdin",
+      "rating": 8.0,
+      "release_date": "25 November 1992",
+      "review": "Aladdin grant the fan's wishes, by being a great film. A whole new world."
+    }
+  }
+]

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{name}}</h5>
+                      <p class="card-text">Mahasiswa Ilmu Komputer 2021 yang sedang menjalani mata kuliah PBP</p>
+                      <p class="card-text">NPM: {{student_id}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="card text-center">
+                    <div class="card-header">
+                      Kesimpulan
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Kesimpulan</h5>
+                    {% if true_number >= 5 %}
+                      <p class="card-text">Selamat, kamu sudah banyak menonton!</p>
+                    {% else %}
+                      <p class="card-text">Wah, kamu masih sedikit menonton!</p>
+                    {% endif %}
+                    <a href="https://www.imdb.com/" target="_blank" class="btn btn-primary btn-sm">Taken From</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <table class="table table-success table-striped table-hover table-active table-bordered border-light mt-4">
+            <thead>
+                <tr>
+                    <th class="text-center" colspan="6">My Watch List</th></tr>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Release Date</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Watched</th>
+                  <th class="text-center" scope="col">Review</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for watchlist in list_watch_list %}
+                <tr>
+                  <th scope="row">{{watchlist.pk}}</th>
+                  <td>{{watchlist.title}}</td>
+                  <td>{{watchlist.release_date}}</td>
+                  <td>{{watchlist.rating}}</td>
+                  {% if watchlist.watched == True %}
+                    <td>Watched Already</td>
+                  {% else %}
+                    <td>On My Watch Queue</td>
+                  {% endif %}
+                  <td>{{watchlist.review}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    </div>
+ {% endblock content %}
