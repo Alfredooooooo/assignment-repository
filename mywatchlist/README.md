@@ -274,7 +274,7 @@ class MyWatchList(models.Model):
     {% endblock content %}
     ```
 
-11. Membuat unit test pada tests.py untuk menguji bahwa ketiga URL diatas dapat mengembalikan respons HTTP 200 OK:
+11. Membuat unit test pada tests.py untuk menguji bahwa ketiga URL diatas dapat mengembalikan respons HTTP 200 OK serta menambahkan file style.css pada static/css/:
 
 ```shell
     from django.test import TestCase, Client
@@ -321,3 +321,13 @@ HEROKU_API_KEY: (my_secret_API_key)
 ```
 
 ## Penangkapan Screenshot Postman
+#### HTML
+![image](https://user-images.githubusercontent.com/88032017/191315536-58590161-3543-420b-817e-088d24dbdc1e.png)
+![image](https://user-images.githubusercontent.com/88032017/191315621-9ae25ed0-69d3-4f18-aa61-970cdb7ab419.png)
+#### JSON
+![image](https://user-images.githubusercontent.com/88032017/191315744-89eeaa80-51a7-4cc4-aaa8-4525a3f2921d.png)
+![image](https://user-images.githubusercontent.com/88032017/191315843-129eef0f-d51a-4eed-b545-ddb0a3597de5.png)
+#### XML
+  ![image](https://user-images.githubusercontent.com/88032017/191315946-f7fdd300-cc82-4365-ab1c-f5b09c6dddb5.png)
+![image](https://user-images.githubusercontent.com/88032017/191316056-8b9bb786-3092-4fd3-a41e-2e0c7e3532f7.png)
+
