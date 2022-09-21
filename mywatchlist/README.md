@@ -48,6 +48,13 @@ Referensi:
 ## Mengapa kita membutuhkan data delivery dalam pengimplementasian sebuah platform
 
 Kita membutuhkan data delivery karena tidak semua hal disimpan (dalam hal ini file yang berisi data-data) dalam server tetapi digenerate oleh kode program. Maka dari itu ketika browser melakukan request data, server akan mengembalikan data yang diinginkan melalui data delivery agar data dapat ditampilkan dalam platform-platform tersebut.
+<br>
+Perlu diketahui juga bahwa pada umumnya data tidak bersifat static, data bersifat dinamis. Data yang static merujuk pada data yang jarang diakses dan kemungkinan besar tidak akan diubah. Hal yang sebaliknya yaitu data dinamis yang merujuk pada data yang terupdate secara periodik. Artinya data tersebut akan terus berganti apabila terdapat informasi baru yang didapatkan server. Serta dari yang kita tahu, informasi baru kemungkinan besar akan tetap datang apabila kita berbicara mengenai platform. Teknologi tidak lepas dari informasi-informasi sehingga data cenderung bersifat dinamis. Maka dari itu, kedinamisan data ini akan sangat terbantu dengan adanya data delivery (transmisi data) yang tersedia dalam bentuk XML maupun JSON.
+
+Referensi:
+<br>
+[Static Data vs Dynamic Data](https://pipeline.zoominfo.com/marketing/dynamic-data)
+<br>
 
 ## Sebelum implementasi:
 
@@ -321,13 +328,18 @@ HEROKU_API_KEY: (my_secret_API_key)
 ```
 
 ## Penangkapan Screenshot Postman
+
 #### HTML
+
 ![image](https://user-images.githubusercontent.com/88032017/191315536-58590161-3543-420b-817e-088d24dbdc1e.png)
 ![image](https://user-images.githubusercontent.com/88032017/191315621-9ae25ed0-69d3-4f18-aa61-970cdb7ab419.png)
+
 #### JSON
+
 ![image](https://user-images.githubusercontent.com/88032017/191315744-89eeaa80-51a7-4cc4-aaa8-4525a3f2921d.png)
 ![image](https://user-images.githubusercontent.com/88032017/191315843-129eef0f-d51a-4eed-b545-ddb0a3597de5.png)
-#### XML
-  ![image](https://user-images.githubusercontent.com/88032017/191315946-f7fdd300-cc82-4365-ab1c-f5b09c6dddb5.png)
-![image](https://user-images.githubusercontent.com/88032017/191316056-8b9bb786-3092-4fd3-a41e-2e0c7e3532f7.png)
 
+#### XML
+
+![image](https://user-images.githubusercontent.com/88032017/191315946-f7fdd300-cc82-4365-ab1c-f5b09c6dddb5.png)
+![image](https://user-images.githubusercontent.com/88032017/191316056-8b9bb786-3092-4fd3-a41e-2e0c7e3532f7.png)
