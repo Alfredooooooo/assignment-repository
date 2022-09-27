@@ -7,6 +7,10 @@
 [Login Heroku](https://pbpassignment.herokuapp.com/todolist/login/)
 <br>
 [Register Heroku](https://pbpassignment.herokuapp.com/todolist/register/)
+<br>
+username: pbpdummy1, pbpdummy2
+<br>
+password: pbptugaslab
 
 ## Jawaban Pertanyaan
 
