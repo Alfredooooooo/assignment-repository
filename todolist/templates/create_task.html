@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    
+    <div class="container shadow p-3 mb-5 mt-4 bg-body rounded">
+        <div class="h1 mb-3">Create Your To Do List</div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            {{form.as_p}}
+
+            <input type="submit" name="submit" value="Daftar" class="btn btn-primary"/>
+        </form>
+    </div>
+{% endblock content %}

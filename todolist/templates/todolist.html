@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="m-3"></div>
+    {% if jumlahData == 0 %} 
+        <div class="container shadow p-3 mb-5 bg-body rounded">
+            <div class="h6">Sepertinya anda belum pernah membuat Task sebelumnya!</div>
+            <p>Belum membuat Task? Ingin Logout?</p>
+            <a href="{% url 'todolist:create_task' %}" class="btn btn-outline-info">Buat Task mu</a>
+            <a href="{% url 'todolist:logout' %}" class="btn btn-outline-danger">Logout</a>
+        </div>
+
+    {% else %}
+        <div class="container shadow p-3 mb-5 bg-body rounded">
+            <div class="h6">Berikut adalah task yang sedang dan pernah kamu lakukan!</div>
+            <p>Ingin menambah Task? Ingin Logout?</p>
+            <a href="{% url 'todolist:create_task' %}" class="btn btn-outline-info">Tambah Task Baru</a>
+            <a href="{% url 'todolist:logout' %}" class="btn btn-outline-danger">Logout</a>
+        </div>
+        <div class="container shadow p-3 mb-5 bg-body rounded">
+            <div class="h5 p-2">Yet To Do</div>
+                {% for data in task %}
+                    {% if data.is_finished == False %}
+                        <div class="card shadow bg-body rounded">
+                                <div class="card-header">
+                                    {{data.date}}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{data.title}}</h5>
+                                    <p class="card-text">{{data.description}}</p>
+                                    <a href="{% url 'todolist:update' data.id %}" class="btn btn-outline-success">Mark As Finished</a>
+                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger">Delete</a>
+                                </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+
+        <div class="container shadow p-3 mb-5 bg-body rounded">
+            <div class="h5 p-2">Finished</div>
+                {% for data in task %}
+                    {% if data.is_finished %}
+                        <div class="card">
+                                <div class="card-header">
+                                    {{data.date}}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{data.title}}</h5>
+                                    <p class="card-text">{{data.description}}</p>
+                                    <a href="{% url 'todolist:update' data.id %}" class="btn btn-outline-warning">Unmark As Finished</a>
+                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger">Delete</a>
+                                </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        </div>
+
+    {% endif %}
+{% endblock content %}
