@@ -12,6 +12,8 @@ username: pbpdummy1, pbpdummy2
 <br>
 password: pbptugaslab
 
+# Tugas 4
+
 ## Jawaban Pertanyaan
 
 #### Apa kegunaan {% csrf_token %} pada elemen <form>?
@@ -587,3 +589,162 @@ python manage.py createsuperuser
 
     admin.site.register(Task)
 ```
+
+# Tugas 5
+
+## Jawaban Pertanyaan
+
+### Perbedaan dari Inline, Internal, dan External CSS
+
+##### Inline CSS
+
+- Inline diaplikasikan ke single tag dari dokumen HTML
+- Inline style declaration juga diletakkan di dalam tag tersebut
+
+##### Advantage Inline CSS
+
+- CSS mudah untuk diinsert ke HTML page, sehingga metode ini cocok untuk dipakai jika kita ingin melakukan testing, melihat perubahan, atau bahkan melakukan debugging pada website kita
+- Kita tidak perlu membuat file terpisah untuk CSS
+
+#### Disadvantage Inline CSS
+
+- Menambahkan CSS ke setiap tag pada HTML memerlukan waktu yang banyak dan membuat struktur HTML kita tidak bersih
+- Melakukan styling elemen dapat merubah ukuran page kita dan waktu download
+
+##### Internal CSS
+
+- Internal CSS diaplikasikan ke seluruh HTML file tersebut (satu HTML saja) tapi tidak diaplikasikan ke file HTML lainnya
+- Biasanya internal CSS diletakkan dan diurung di dalam <head></head> tag dan dipanggil dengan <style></style>
+
+#### Advantage Internal CSS
+
+- Kita dapat menggunakan ID dan class selector pada file ktia
+- Kita tidak perlu membuat file terpisah untuk CSS
+- Struktur akan lebih rapih dibanding inline CSS
+- Tidak memerlukan waktu yang banyak ketimbang menggunakan inline CSS
+
+#### Disadvantage Internal CSS
+
+- Menambahkan CSS pada HTML document secara langsung akan menambah ukuran page (byte) dan mempengaruhi kecepatan download
+
+#### External CSS
+
+- External CSS diaplikasikan ke seluruh HTML file tersebut dan bisa diaplikasikan juga ke file HTML lainnya
+- External CSS ditulis dalam file berbeda dengan extension css dan dipanggil dengan <link rel="stylesheet" href="URLnya">
+- External CSS memudahkan kita untuk memberikan tampilan yang konsisten pada keseluruhan HTML file yang kita punya
+
+#### Advantage External CSS
+
+- Ukuran HTML (dalam byte) akan lebih kecil dibandingkan menggunakan kedua cara diatas
+- Kita bisa menggunakan file CSS yang sama untuk berbagai HTML file
+- Struktur akan lebih rapih dibanding inline dan internal CSS
+- Tidak memerlukan waktu yang banyak ketimbang menggunakan inline dan internal CSS
+
+#### Disadvantage External CSS
+
+- Page yang dirender mungkin saja akan lebih lama sampai external CSS berhasil di load
+- Linking ke berbagai CSS file bisa saja meningkatkan waktu download yang diperlukan
+
+### HTML Tag yang saya ketahui
+
+- <html>: Tag pembuka untuk membuat dokumen HTML
+- <head>: Informasi meta tentang dokumen
+- <title>: Membuat judul halaman yang nantinya akan ditampilkan di browser
+- <body>: Tempat dibuatnya semua konten website menggunakan HTML
+- <h1> s/d <h6>:  Membuat judul atau heading
+- <hr>: Memisahkan konten (biasanya ditampilkan garis pembatas)
+- <p>:  Membuat paragraf
+- <br>: Membuat garis baru
+- <style>: Atribut untuk elemen styling pada HTML
+- <b>: Membuat teks tebal
+- <strong>: Membuat teks penting
+- <i>: Membuat teks miring
+- <img>: Elemen untuk mendefinisikan gambar
+- <form>: Membuat formulir untuk mengumpulkan input pengguna
+- <input>: Membuat tipe inputan pada form yang akan dibuat
+- <textarea>: Elemen untuk mendefinisikan field input
+- <label>: Memberikan label pada elemen input
+- <button>: Membuat Button
+- <table>: Membuat tabel pada web
+- <div>: container
+
+### Tipe-tipe CSS selector yang saya ketahui
+
+- .namaClass: Memilih semua elemen dengan nama class="namaClass"
+- .namaClass1.namaClass2: Memilih semua elemen dengan nama nameClass1 dan nameClass2 pada class attribute
+- .namaClass1 .namaClass2: Memilih class bernama namaClass2 yang merupakan anak dari namaClass1
+- #id: Memilih id dengan nama id pada atribut id pada tag html
+- :active : Memilih link yang aktif
+- :checked : Melihat apakah checkbutton sudah tercheck
+- :hover : Saat mouse di hover pada suatu element, akan dilakukan sesuatu
+
+### Cara mengimplementasi checkpoint diatas
+
+Saya menambahkan class center yang berisi:
+
+```shell
+    .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+```
+
+Serta melakukan import font pada body
+
+```shell
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+
+    body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    overflow-x: hidden;
+    }
+```
+
+Saya juga menggunakan method hover yaitu:
+
+```shell
+    a {
+    cursor: pointer;
+    transition: all 200ms linear;
+    }
+    a:hover {
+    text-decoration: none;
+    }
+    .link {
+    color: #102770;
+    text-decoration: none;
+    }
+    .link:hover {
+    color: #ffeba7;
+    }
+
+    .btn-hover {
+    transition: all 200ms linear;
+    -webkit-transition: all 200ms linear;
+    padding: 0.4rem 2.5rem;
+    background-color: #444;
+    color: #eee;
+    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+    outline: none;
+    }
+    .btn-hover:active,
+    .btn-hover:focus {
+    background-color: #102770;
+    color: #44a1;
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+    outline: none;
+    }
+    .btn-hover:hover {
+    background-color: #102770;
+    color: #44a1;
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+    }
+```
+
+Saya menambahkan background color pada date dan menambahkan opacity tertentu. Selain itu saya juga menggunakan bootstrap untuk mendesain card tersebut beserta flex. Saya juga melakukan pekerjaan bonus yaitu saat mouse dihover saya akan scaling card menjadi 1.2x nya.

@@ -1,24 +1,28 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+    <title>Register Page</title>
+{% endblock meta %}
 
 {% block content %}
-    {% include 'navbar.html' %}
-    <div class="container p-xl-3">
-        {% if form.errors %} 
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                Ada yang salah dalam proses Registrasi. Silahkan coba lagi!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>    
-        {% endif %}
-    </div>
-    <div class="container shadow p-3 mb-5 bg-body rounded">
-        <div class="h1 mb-3">Register Page</div>
-        <form action="{% url 'todolist:register' %}" method="POST">
-            {% csrf_token %}
+    <div class="nav-lul">{% include 'navbar.html' %}</div>
+        <div class = "register center p-lg-3">
+            <div class="container p-xl-3">
+                {% if form.errors %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Ada yang salah dalam proses Registrasi. Silahkan coba lagi!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="container shadow bg-body rounded p-lg-5">
+                <div class="h1 mb-3">Register Page</div>
+                <form action="{% url 'todolist:register' %}" method="POST">
+                    {% csrf_token %}
             
-            {{form.as_p}}
-
-            <input type="submit" name="submit" value="Daftar" class="btn btn-primary"/>
-        </form>
-    </div>
+                    {{form.as_p}}
+                    <input type="submit" name="submit" value="Daftar" class="btn btn-hover"/>
+                </form>
+            </div>
+        </div>
 {% endblock content %}

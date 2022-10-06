@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  overflow-x: hidden;
+}
+a {
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.link {
+  color: #102770;
+  text-decoration: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.h-24 {
+  height: 6em;
+}
+
+.top-0 {
+  top: 0;
+}
+.top-24 {
+  top: 6em;
+}
+.link:hover {
+  color: #ffeba7;
+}
+
+.height-set {
+  height: 24rem;
+  width: 30rem;
+  padding: 10rem;
+}
+
+.margin-set {
+  margin-top: 1rem;
+}
+.absolute {
+  position: absolute;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h-full {
+  height: 100%;
+}
+.register, .login {
+  max-width: 800px;
+  width: 100%;
+}
+
+.btn-hover {
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0.4rem 2.5rem;
+  background-color: #444;
+  color: #eee;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+  outline: none;
+}
+
+.p-4 {
+  padding: 1em;
+}
+
+.btn-hover:active,
+.btn-hover:focus {
+  background-color: #102770;
+  color: #44a1;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+  outline: none;
+}
+.btn-hover:hover {
+  background-color: #102770;
+  color: #44a1;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+
+.card {
+  transition: transform 0.4s;
+  margin: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+/* 
+body {
+  background-color: red;
+  border: 3px solid black;
+} */
+
+@media only screen and (max-width: 768px) {
+  .register {
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .login {
+    max-width: 250px;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media only screen and (max-height: 666px) {
+  .nav-lul {
+    display: none;
+  }
+}

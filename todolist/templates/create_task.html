@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    {% include 'navbar.html' %}
-    
-    <div class="container shadow p-3 mb-5 mt-4 bg-body rounded">
-        <div class="h1 mb-3">Create Your To Do List</div>
-        <form action="" method="POST">
-            {% csrf_token %}
-            
-            {{form.as_p}}
+{% block meta %}
+    <title>Create Task</title>
+{% endblock meta %}
 
-            <input type="submit" name="submit" value="Daftar" class="btn btn-primary"/>
-        </form>
+{% block content %}
+    <div class="nav-lul">{% include 'navbar.html' %}</div>
+    <div class="container center d-flex align-items-center justify-content-center p-4">
+        <div class="shadow p-3 mb-5 mt-4 bg-body rounded p-xl-5">
+            <div class="h1 mb-3">Create Your To Do List</div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                {{form.as_p}}
+                <div class="d-flex justify-content-center flex-grow-0 flex-shrink-0">
+                    <input type="submit" name="submit" value="Daftar" class="btn btn-hover"/>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock content %}

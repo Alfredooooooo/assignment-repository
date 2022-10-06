@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+    <title>To do List</title>
+{% endblock meta %}
+
 {% block content %}
-    {% include 'navbar.html' %}
+    <div class="nav-lul">{% include 'navbar.html' %}</div>
     <div class="m-3"></div>
     {% if jumlahData == 0 %} 
         <div class="container shadow p-3 mb-5 bg-body rounded">
@@ -20,40 +24,44 @@
         </div>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="h5 p-2">Yet To Do</div>
+            <div class="d-flex justify-content-center align-content-center flex-wrap">
                 {% for data in task %}
                     {% if data.is_finished == False %}
-                        <div class="card shadow bg-body rounded">
-                                <div class="card-header">
+                        <div class="card shadow bg-body rounded" style="width:18rem">
+                                <div class="card-header bg-primary bg-opacity-10">
                                     {{data.date}}
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{data.title}}</h5>
                                     <p class="card-text">{{data.description}}</p>
                                     <a href="{% url 'todolist:update' data.id %}" class="btn btn-outline-success">Mark As Finished</a>
-                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger">Delete</a>
+                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger mx-1 my-1">Delete</a>
                                 </div>
                         </div>
                     {% endif %}
                 {% endfor %}
+            </div>
         </div>
 
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="h5 p-2">Finished</div>
+            <div class="d-flex justify-content-center align-content-center flex-wrap">
                 {% for data in task %}
                     {% if data.is_finished %}
-                        <div class="card">
-                                <div class="card-header">
+                        <div class="card shadow bg-body rounded">
+                                <div class="card-header bg-success bg-opacity-10">
                                     {{data.date}}
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{data.title}}</h5>
                                     <p class="card-text">{{data.description}}</p>
                                     <a href="{% url 'todolist:update' data.id %}" class="btn btn-outline-warning">Unmark As Finished</a>
-                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger">Delete</a>
+                                    <a href="{% url 'todolist:delete' data.id %}" class="btn btn-outline-danger mx-1 my-1">Delete</a>
                                 </div>
                         </div>
                     {% endif %}
                 {% endfor %}
+            </div>
         </div>
 
     {% endif %}
