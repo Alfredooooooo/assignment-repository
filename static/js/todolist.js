@@ -50,8 +50,8 @@ $('#formAddTask').on('submit', (e) => {
             // for(let i = 0; i< data.length; i++) {
             //     setTask(data[i], data[i].pk)
             // }
-            getTask()
             $('#exampleModal').modal('hide');
+            getTask()
         },
         error: (e) => {
             alert(e);
