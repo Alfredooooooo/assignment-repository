@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
@@ -8,6 +8,9 @@ from django.contrib import messages
 from django.shortcuts import render
 from todolist.models import Task
 from todolist.forms import RegisterUserForm, TaskUserForm
+from django.core import serializers
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -60,17 +63,17 @@ def register_user(request):
 @login_required(login_url="/todolist/login/")
 def show_todolist(request):
     # Melakukan filter sesuai user pada objek-objek Task
-    data = Task.objects.filter(user=request.user)
-    # Menghitung jumlah data
-    jumlahData = 0
-    for d in data:
-        jumlahData += 1
+    # data = Task.objects.filter(user=request.user)
+    # # Menghitung jumlah data
+    # jumlahData = 0
+    # for d in data:
+    #     jumlahData += 1
 
-    context = {
-        "task": data,
-        "jumlahData": jumlahData,
-    }
-    return render(request, "todolist.html", context)
+    # context = {
+    #     "task": data,
+    #     "jumlahData": jumlahData,
+    # }
+    return render(request, "todolist.html", {})
 
 
 @login_required(login_url="/todolist/login/")
@@ -100,8 +103,43 @@ def update_task(request, id):
 
     return HttpResponseRedirect(reverse("todolist:show_todolist"))
 
+@login_required(login_url="/todolist/login/")
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+
+@csrf_exempt
+def add_task(request):
+    if (request.method == "POST"):
+        user = request.user
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        task = Task(user=user, title=title, description=description)
+        task.save()
+        return JsonResponse({"fields": {
+            "id": task.id,
+            "title": title,
+            "description": description,
+            "date": task.date,
+            "is_finished": task.is_finished,
+        }})
+
+@csrf_exempt
 def delete_task(request, id):
+    print("test")
     taskToBeDeleted = Task.objects.filter(pk=id)
     taskToBeDeleted.delete()
-    return redirect(reverse("todolist:show_todolist"))
+    task = Task.objects.filter(user=request.user).values()
+    # listTask = []
+    # for t in task:
+    #     print(t)
+    #     data = {"fields": {
+    #         "id": t.get("id"),
+    #         "title": t.get("title"),
+    #         "description": t.get("description"),
+    #         "date": t.get("date"),
+    #         "is_finished": t.get("is_finished"),
+    #     }}
+    #     listTask.append(data)
+    return JsonResponse({"data": list(task)}, safe=False)
